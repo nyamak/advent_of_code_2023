@@ -18,14 +18,11 @@ def main_part_two() -> None:
     file = open("input.txt", "r")
     line = file.readline()
     while line:
-        print("before: " + line)
         line = _replace_written_digits(line)
-        print("after: " + line)
         line_nums = [int(char) for char in line if char.isdigit()]
         if line_nums:
             number = int(f"{line_nums[0]}{line_nums[-1]}")
             res += number
-            print(number)
         line = file.readline()
     file.close()
 
